@@ -84,7 +84,7 @@ async def upload(bot: Client, m: Message):
     await input1.delete(True)
     
 
-    await editable.edit("**Send Quality You Want**\n➤ 144P - Send `144`\n➤ 240P - Send `240`\n➤ 360P - Send `360`\n➤ 480P - Send `480`\n➤ 720p - Send `720`\n➤ 1080P - Send `1080`")
+    await editable.edit("**Send Quality You Want**\n➤ 144P    - Send `144`\n➤ 240P    - Send `240`\n➤ 360P    - Send `360`\n➤ 480P    - Send `480`\n➤ 720P    - Send `720`\n➤ 1080P - Send `1080`")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -118,7 +118,7 @@ async def upload(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now Send The Thumb Url\nOr If Don't Want Thumbnail Send 'No'")
+    await editable.edit("Now Send The Thumb Url\nOr If Don't Want Thumbnail Send No")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -170,8 +170,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID :** {str(count).zfill(3)}.**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.mkv**\n\n\n**📚Batch Name** » **{raw_text0}**\n\n\n**📥 Uploaded By** » **{raw_text3}**' 
-                cc1 = f'**[📁] Pdf_ID :** {str(count).zfill(3)}.**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.pdf**\n\n\n**📚Batch Name** » **{raw_text0}**\n\n\n**📥 Uploaded By** » **{raw_text3}**'
+                cc = f'**[📽️] Vid_ID :** {str(count).zfill(3)}.**\n**♻️Title** » {𝗻𝗮𝗺𝗲𝟭}.mp4**\n**📚Batch Name** » **{raw_text0}**\n**📥 Uploaded By** » **{raw_text3}**' 
+                cc1 = f'**[📁] Pdf_ID :** {str(count).zfill(3)}.**\n**♻️Title** » {𝗻𝗮𝗺𝗲𝟭}.pdf**\n**📚Batch Name** » **{raw_text0}**\n**📥 Uploaded By** » **{raw_text3}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -197,7 +197,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"╭─────────────────────╮\n│      **__Downloading__**\n├─────────────────────\n|**📝Name »**`{name}\n|❄Quality » {raw_text2}`\n|**🔗URL »** `{url}`\n╰──────────────────╯"
+                    Show = f"╭────────────────────────╮\n│ **__Downloading Your File__**\n├────────────────────────\n **📝Name »**`{name}\n❄Quality » {raw_text2}`\n**🔗URL »** `{url}`\n╰────────────────────────╯"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -214,7 +214,7 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("╭─────────────────────╮\n│      **__Done Boss__**\n╰──────────────────╯")
+    await m.reply_text("╭────────────────────────╮\n│      **__Successfully Uploaded__**\n╰────────────────────────╯")
 
 
 bot.run()
