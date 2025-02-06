@@ -44,7 +44,7 @@ async def start(bot: Client, m: Message):
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**𝗦𝘁𝗼𝗽𝗽𝗲𝗱**🚦", True)
+    await m.reply_text("╭───────────────────────╮\n│          **__Successfully Stopped 🚦__**\n╰───────────────────────╯", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -197,7 +197,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"╭───────────────────────╮\n│             **__DOWNLOADING YOUR FILE__**\n├───────────────────────\n\n **📝Name »**`{name}\n❄Quality » {raw_text2}`\n**🔗URL »** `{url}`\n╰───────────────────────╯"
+                    Show = f"╭───────────────────────╮\n│          **__DOWNLOADING YOUR FILE__**\n├───────────────────────\n\n **📝Name »**`{name}\n❄Quality » {raw_text2}`\n**🔗URL »** `{url}`\n╰───────────────────────╯"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -214,7 +214,7 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("╭───────────────────────╮\n│            **__Successfully Uploaded__**\n╰───────────────────────╯")
+    await m.reply_text("╭───────────────────────╮\n│          **__Successfully Uploaded__**\n╰───────────────────────╯")
 
 
 bot.run()
