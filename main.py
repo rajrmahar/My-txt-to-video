@@ -169,9 +169,9 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                
-                cc = f'**[📽️] Vid_ID :** {str(count).zfill(3)}**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.mp4**\n\n**📚Batch Name** » **{raw_text0}**\n\n**📥 Uploaded By** » **{raw_text3}**' 
-                cc1 = f'**[📁] Pdf_ID :** {str(count).zfill(3)}**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.pdf**\n\n**📚Batch Name** » **{raw_text0}**\n\n**📥 Uploaded By** » **{raw_text3}**'
+                #**📚Batch Name** » **{raw_text0}**
+                cc = f'**[📽️] Vid_ID :** {str(count).zfill(3)}**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.mp4**\n\n<pre><code>🔖 Batch Name: {raw_text0}</code></pre>\n\n**📥 Uploaded By** » **{raw_text3}**' 
+                cc1 = f'**[📁] Pdf_ID :** {str(count).zfill(3)}**\n\n**♻️Name** » {𝗻𝗮𝗺𝗲𝟭}.pdf**\n\n<pre><code>🔖 Batch Name: {raw_text0}</code></pre>\n\n**📥 Uploaded By** » **{raw_text3}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
